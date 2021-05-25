@@ -1,8 +1,8 @@
-package haiwaitu.t20210523;
+package haiwaitu.t20210524;
 
 /**
  * @Author huangjunqiao
- * @Date 2021/05/23 22:58
+ * @Date 2021/05/24 22:58
  * @Description 5765. 跳跃游戏 VII(242周赛)
  */
 public class CanReach {
