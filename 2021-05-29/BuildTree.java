@@ -10,33 +10,31 @@ import java.util.*;
  * @Description 105. 从前序与中序遍历序列构造二叉树
  */
 public class BuildTree {
-    public Map<Integer, Integer> indexMap;
+    Map<Integer, Integer> indexMap = new HashMap<>();
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        // 针对每个子区间，前序遍历数组第一个元素必定是当前子树父节点
-        // 而中序遍历数组中，根节点左边的元素都属于左子树，右边的元素都属于右子树
-        int len = inorder.length;
-        indexMap = new HashMap<>();
+        // 使用HashMap优化的递归，时间O(N)，空间O(N)
+        int len = preorder.length;
         for (int i = 0; i < len; i++) {
             indexMap.put(inorder[i], i);
         }
-        TreeNode root = buildCore(0, len - 1, preorder, 0, len - 1, inorder);
-        return root;
+        return buildCore(preorder, 0, len - 1, inorder, 0, len - 1);
     }
-    public TreeNode buildCore(int preL, int preR, int[] preorder, int inL, int inR, int[] inorder) {
-        if (inL > inR) {
+    /**
+     * 递归过程主要做两件事：1、根据前序遍历头节点（当前节点）找到其在中序遍历数组中的位置
+     * 2、根据第1步位置，计算中序遍历左/右节点的数量，找到前序遍历中左右子节点的分界线，以继续下一轮递归
+     */
+    public TreeNode buildCore(int[] preorder, int preL, int preR, int[] inorder, int inL, int inR) {
+        if (preL > preR || inL > inR) {
             return null;
         }
         int val = preorder[preL];
         TreeNode node = new TreeNode(val);
-        // 找到当前节点在中序数组的下标
-        int idx = indexMap.get(val);
-        // 计算左右子树的节点个数
-        int leftNum = idx - inL;
-        int rightNum = inR - idx;
-        // 前序遍历中，区间[preL+1, preL+leftNum]为左子树的节点，
-        // 区间[preL+leftNum+1, preR]为右子树节点
-        node.left = buildCore(preL + 1, preL + leftNum, preorder, inL, idx - 1, inorder);
-        node.right = buildCore(preL + leftNum + 1, preR, preorder, idx + 1, inR, inorder);
+        // 1、查找目标值在中序遍历数组的位置
+        int inorderIdx = indexMap.get(val);
+        // 2、结算中序遍历中当前节点左边的节点数量
+        int leftNum = inorderIdx - inL;
+        node.left = buildCore(preorder, preL + 1, preL + leftNum, inorder, inL, inorderIdx - 1);
+        node.right = buildCore(preorder, preL + leftNum + 1, preR, inorder, inorderIdx + 1, inR);
         return node;
     }
 }
