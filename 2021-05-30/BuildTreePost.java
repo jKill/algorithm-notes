@@ -10,66 +10,28 @@ import java.util.*;
  * @Description 106. 从中序与后序遍历序列构造二叉树
  */
 public class BuildTreePost {
-    static Map<Integer, Integer> indexMap;
-    public static TreeNode buildTree(int[] inorder, int[] postorder) {
-        // 递归解法
+    Map<Integer, Integer> indexMap = new HashMap<>();
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        // 递归，时间O(N)，空间O(N)
         int len = inorder.length;
-        indexMap = new HashMap<>();
-        // 方便根据值获取节点在后序遍历数组中的位置
         for (int i = 0; i < len; i++) {
             indexMap.put(inorder[i], i);
         }
-        return buildCore(0, len - 1, inorder, 0, len - 1, postorder);
+        return buildCore(inorder, 0, len - 1, postorder, 0, len - 1);
     }
-    public static TreeNode buildCore(int inL, int inR, int[] inorder, int postL, int postR, int[] postorder) {
-        if (inL > inR) {
+    public TreeNode buildCore(int[] inorder, int inL, int inR, int[] post, int postL, int postR) {
+        if (inL > inR || postL > postR) {
             return null;
         }
-        int val = postorder[postR];
+        // 1、后序遍历区间内最后一个元素为根节点，找到根节点在中序遍历中的位置inorderIdx。
+        int val = post[postR];
+        int inorderIdx = indexMap.get(val);
+        // 2、inorderIdx到中序遍历左边界的距离，即左子树的节点数leftNum。根据leftNum找到后序遍历数组中左右子树的分界线。
+        int leftNum = inorderIdx - inL;
         TreeNode node = new TreeNode(val);
-        // 根据值获取当前节点中序遍历数组中的位置
-        int idx = indexMap.get(val);
-        // 计算右子树的节点个数
-        int rightNum = inR - idx;
-        // 中序遍历数组中，[inL, idx-1]为左子树节点，[idx+1, inR]为右子树节点
-        // 后序遍历数组中，[postR-rightNum, postR]为右子树节点，[postL,postR-rightNum-1]为左子树节点
-        node.left = buildCore(inL, idx - 1, inorder, postL, postR - rightNum - 1, postorder);
-        node.right = buildCore(idx + 1, inR, inorder, postR - rightNum, postR - 1, postorder);
+        node.left = buildCore(inorder, inL, inorderIdx - 1, post, postL, postL + leftNum - 1);
+        node.right = buildCore(inorder, inorderIdx + 1, inR, post, postL + leftNum, postR - 1);
         return node;
-    }
-
-    public TreeNode buildTree0(int[] inorder, int[] postorder) {
-        // 迭代解法
-        if (postorder == null || postorder.length == 0) {
-            return null;
-        }
-        TreeNode root = new TreeNode(postorder[postorder.length - 1]);
-        Deque<TreeNode> stack = new LinkedList<TreeNode>();
-        stack.push(root);
-        int inorderIndex = inorder.length - 1;
-        for (int i = postorder.length - 2; i >= 0; i--) {
-            int postorderVal = postorder[i];
-            TreeNode node = stack.peek();
-            if (node.val != inorder[inorderIndex]) {
-                node.right = new TreeNode(postorderVal);
-                stack.push(node.right);
-            } else {
-                while (!stack.isEmpty() && stack.peek().val == inorder[inorderIndex]) {
-                    node = stack.pop();
-                    inorderIndex--;
-                }
-                node.left = new TreeNode(postorderVal);
-                stack.push(node.left);
-            }
-        }
-        return root;
-    }
-
-
-    public static void main(String[] args) {
-        int[] inorder = {9,3,15,20,7};
-        int[] postorder = {9,15,7,20,3};
-        System.out.println(buildTree(inorder, postorder));
     }
 
 }
