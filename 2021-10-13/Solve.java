@@ -76,10 +76,10 @@ public class Solve {
         while (!q.isEmpty()) {
             int[] cell = q.poll();
             int x = cell[0], y = cell[1];
-            moveAndMark(x, y, 0, 1, board, q);
-            moveAndMark(x, y, 0, -1, board, q);
-            moveAndMark(x, y, 1, 0, board, q);
-            moveAndMark(x, y, -1, 0, board, q);
+            moveAndMark(x, y + 1, board, q);
+            moveAndMark(x, y - 1, board, q);
+            moveAndMark(x + 1, y, board, q);
+            moveAndMark(x - 1, y, board, q);
         }
 
         for (int i = 0; i < m; i++) {
@@ -93,12 +93,12 @@ public class Solve {
         }
     }
 
-    public void moveAndMark(int x, int y, int moveX, int moveY, char[][] board, Deque<int[]> q) {
-        int newX = x + moveX, newY = y + moveY;
-        if (newX < 0 || newY < 0 || newX >= m || newY >= n || board[newX][newY] != 'O') {
+    public void moveAndMark(int x, int y, char[][] board, Deque<int[]> q) {
+        if (x < 0 || y < 0 || x >= m || y >= n || board[x][y] != 'O') {
             return;
         }
-        q.offer(new int[] {newX, newY});
-        board[newX][newY] = 'M';
+        q.offer(new int[] {x, y});
+        board[x][y] = 'M';
     }
+
 }
