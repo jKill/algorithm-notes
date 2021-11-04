@@ -339,6 +339,181 @@
 - [20. 有效的括号](https://github.com/jKill/algorithm-notes/blob/master/2021-07-30/IsValid.java)
 - [1047. 删除字符串中的所有相邻重复项](https://github.com/jKill/algorithm-notes/blob/master/2021-07-30/RemoveDulplicates.java)
 
+#### 2021-08-01
+- [225. 用队列实现栈](https://github.com/jKill/algorithm-notes/blob/master/2021-08-01/MyStack.java)
 
+#### 2021-08-02
+- [1021. 删除最外层的括号](https://github.com/jKill/algorithm-notes/blob/master/2021-08-02/RemoveOuterParentheses.java)
+
+#### 2021-08-05
+- [1190. 反转每对括号间的子串](https://github.com/jKill/algorithm-notes/blob/master/2021-08-05/ReverseParentheses.java)
+
+#### 2021-08-06
+- [456. 132 模式](https://github.com/jKill/algorithm-notes/blob/master/2021-08-06/Find132Pattern.java)
+
+#### 2021-08-07
+- [227. 基本计算器 II](https://github.com/jKill/algorithm-notes/blob/master/2021-08-07/Calculate.java)
+
+#### 2021-08-08
+- [150. 逆波兰表达式求值](https://github.com/jKill/algorithm-notes/blob/master/2021-08-08/EvalRPN.java)
+
+#### 2021-08-09
+- [503. 下一个更大元素 II](https://github.com/jKill/algorithm-notes/blob/master/2021-08-09/NextGreaterElements.java)
+
+#### 2021-08-10
+- [71. 简化路径](https://github.com/jKill/algorithm-notes/blob/master/2021-08-10/SimplyfyPath.java)
+
+#### 2021-08-11
+- [856. 括号的分数](https://github.com/jKill/algorithm-notes/blob/master/2021-08-11/ScoreOfParentheses.java)
+
+#### 2021-08-12
+- [385. 迷你语法分析器](https://github.com/jKill/algorithm-notes/blob/master/2021-08-12/Deserialize.java)
+
+#### 2021-08-13
+- [1249. 移除无效的括号](https://github.com/jKill/algorithm-notes/blob/master/2021-08-13/MinRemoveToMakeValid.java)
+
+#### 2021-08-14
+- [636. 函数的独占时间](https://github.com/jKill/algorithm-notes/blob/master/2021-08-14/ExclusiveTime.java)
+
+#### 2021-08-15
+- [341. 扁平化嵌套列表迭代器](https://github.com/jKill/algorithm-notes/blob/master/2021-08-15/NestedIterator.java)
+
+#### 2021-08-16
+- [224. 基本计算器](https://github.com/jKill/algorithm-notes/blob/master/2021-08-16/Calculate.java)
+
+#### 2021-08-17
+- [726. 原子的数量](https://github.com/jKill/algorithm-notes/blob/master/2021-08-17/CountOfAtoms.java)
+
+#### 2021-08-18
+- [496. 下一个更大元素 I](https://github.com/jKill/algorithm-notes/blob/master/2021-08-18/NextGenerateElement.java)
+
+#### 2021-08-19
+- [402. 移掉 K 位数字](https://github.com/jKill/algorithm-notes/blob/master/2021-08-19/RemoveKDigits.java)
+
+#### 2021-08-20
+- [316. 去除重复字母](https://github.com/jKill/algorithm-notes/blob/master/2021-08-20/RemoveDuplicateLetters.java)
+
+#### 2021-08-21
+- [1046. 最后一块石头的重量](https://github.com/jKill/algorithm-notes/blob/master/2021-08-21/LastStoneWeight.java)
+
+#### 2021-08-22
+- [703. 数据流中的第 K 大元素](https://github.com/jKill/algorithm-notes/blob/master/2021-08-22/KthLargest.java)
+
+#### 2021-08-23
+- [692. 前K个高频单词](https://github.com/jKill/algorithm-notes/blob/master/2021-08-23/TopKFrequent.java)
+
+#### 2021-08-24
+- [347. 前 K 个高频元素](https://github.com/jKill/algorithm-notes/blob/master/2021-08-24/TopKFrequent.java)
+
+#### 2021-08-25
+- [1124. 表现良好的最长时间段](https://github.com/jKill/algorithm-notes/blob/master/2021-08-25/LongestWPI.java)
+
+#### 2021-08-20
+- [316. 去除重复字母](https://github.com/jKill/algorithm-notes/blob/master/2021-08-20/RemoveDuplicateLetters.java)
+
+#### 2021-08-26
+- [42. 接雨水](https://github.com/jKill/algorithm-notes/blob/master/2021-08-26/Trap.java)
+
+#### 2021-08-27
+- [84. 柱状图中最大的矩形](https://github.com/jKill/algorithm-notes/blob/master/2021-08-27/LargestRectangleArea.java)
+
+#### 2021-08-28
+- [378. 有序矩阵中第 K 小的元素](https://github.com/jKill/algorithm-notes/blob/master/2021-08-28/KthSmallest.java)
+
+#### 2021-08-31
+- [451. 根据字符出现频率排序](https://github.com/jKill/algorithm-notes/blob/master/2021-08-31/FrequencySort.java)
+
+#### 2021-09-01
+- [973. 最接近原点的 K 个点](https://github.com/jKill/algorithm-notes/blob/master/2021-09-01/KCloest.java)
+
+#### 2021-09-02
+- [239. 滑动窗口最大值](https://github.com/jKill/algorithm-notes/blob/master/2021-09-02/MaxSlidingWindow.java)
+
+#### 2021-09-03
+- [295. 数据流的中位数](https://github.com/jKill/algorithm-notes/blob/master/2021-09-03/MedianFinder.java)
+
+#### 2021-09-04
+- [218. 天际线问题](https://github.com/jKill/algorithm-notes/blob/master/2021-09-04/GetSkyline.java)
+
+#### 2021-09-05
+- [191. 位1的个数](https://github.com/jKill/algorithm-notes/blob/master/2021-09-05/HammingWeight.java)
+- [136. 只出现一次的数字](https://github.com/jKill/algorithm-notes/blob/master/2021-09-05/SingleNumber.java)
+
+#### 2021-09-06
+- [231. 2 的幂](https://github.com/jKill/algorithm-notes/blob/master/2021-09-06/IsPowerOfTwo.java)
+- [190. 颠倒二进制位](https://github.com/jKill/algorithm-notes/blob/master/2021-09-06/ReverseBits.java)
+
+#### 2021-09-08
+- [337. 打家劫舍 III](https://github.com/jKill/algorithm-notes/blob/master/2021-09-08/Rob.java)
+
+#### 2021-09-15
+- [位运算-设置值](https://github.com/jKill/algorithm-notes/blob/master/2021-09-15/SetValue.java)
+
+#### 2021-09-16
+- [位运算-计算/判断](https://github.com/jKill/algorithm-notes/blob/master/2021-09-16/CountAndDetermine.java)
+
+#### 2021-09-17
+- [位运算-获取](https://github.com/jKill/algorithm-notes/blob/master/2021-09-17/Acquire.java)
+
+#### 2021-09-21
+- [209. 长度最小的子数组](https://github.com/jKill/algorithm-notes/blob/master/2021-09-21/MinSubArrayLen.java)
+
+#### 2021-09-25
+- [剑指 Offer 42. 连续子数组的最大和](https://github.com/jKill/algorithm-notes/blob/master/2021-09-25/MaxSubArray.java)
+
+#### 2021-10-11
+- [982. 按位与为零的三元组](https://github.com/jKill/algorithm-notes/blob/master/2021-10-11/CountTriplets.java)
+
+#### 2021-10-12
+- [29. 两数相除](https://github.com/jKill/algorithm-notes/blob/master/2021-10-12/Divide.java)
+- [279. 完全平方数](https://github.com/jKill/algorithm-notes/blob/master/2021-10-12/NumSquares.java)
+
+#### 2021-10-13
+- [412. Fizz Buzz](https://github.com/jKill/algorithm-notes/blob/master/2021-10-13/FizzBuzz.java)
+- [130. 被围绕的区域](https://github.com/jKill/algorithm-notes/blob/master/2021-10-13/Solve.java)
+
+#### 2021-10-14
+- [787. K 站中转内最便宜的航班](https://github.com/jKill/algorithm-notes/blob/master/2021-10-14/FindCheapestFlight.java)
+- [剑指 Offer II 069. 山峰数组的顶部](https://github.com/jKill/algorithm-notes/blob/master/2021-10-14/PeakIndexInMountainArray.java)
+
+#### 2021-10-15
+- [38. 外观数列](https://github.com/jKill/algorithm-notes/blob/master/2021-10-15/CountAndSay.java)
+- [690. 员工的重要性](https://github.com/jKill/algorithm-notes/blob/master/2021-10-15/GetImportance.java)
+
+#### 2021-10-16
+- [127. 单词接龙](https://github.com/jKill/algorithm-notes/blob/master/2021-10-16/LadderLength.java)
+
+#### 2021-10-17
+- [476. 数字的补数](https://github.com/jKill/algorithm-notes/blob/master/2021-10-17/FindComplement.java)
+
+#### 2021-10-18
+- [207. 课程表](https://github.com/jKill/algorithm-notes/blob/master/2021-10-18/CanFinish.java)
+
+#### 2021-10-19
+- [208. 实现 Trie](https://github.com/jKill/algorithm-notes/blob/master/2021-10-19/Trie.java)
+- [211. 添加与搜索单词 - 数据结构设计](https://github.com/jKill/algorithm-notes/blob/master/2021-10-19/WordDictionary.java)
+
+#### 2021-10-21
+- [66. 加一](https://github.com/jKill/algorithm-notes/blob/master/2021-10-21/PlusOne.java)
+
+#### 2021-10-23
+- [695. 岛屿的最大面积](https://github.com/jKill/algorithm-notes/blob/master/2021-10-23/MaxAreaOfIslands.java)
+
+#### 2021-10-24
+- [264. 丑数 II](https://github.com/jKill/algorithm-notes/blob/master/2021-10-24/NthUglyNumber.java)
+
+#### 2021-10-26
+- [946. 验证栈序列](https://github.com/jKill/algorithm-notes/blob/master/2021-10-26/ValidateStackSequences.java)
+
+#### 2021-10-27
+- [4. 寻找两个正序数组的中位数](https://github.com/jKill/algorithm-notes/blob/master/2021-10-27/FindMediumSortedArrays.java)
+
+#### 2021-10-29
+- [47. 全排列 II](https://github.com/jKill/algorithm-notes/blob/master/2021-10-29/PermuteUnique.java)
+- [301. 删除无效的括号](https://github.com/jKill/algorithm-notes/blob/master/2021-10-29/RemoveInvalidParentheses.java)
+
+#### 2021-10-30
+- [79. 单词搜索](https://github.com/jKill/algorithm-notes/blob/master/2021-10-30/Exist.java)
+- [869. 重新排序得到 2 的幂](https://github.com/jKill/algorithm-notes/blob/master/2021-10-30/ReorderedPowerOf2.java)
 
 
