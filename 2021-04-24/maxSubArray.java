@@ -5,21 +5,8 @@ package haiwaitu.t20210424;
  * @Date 2021/04/24 16:32
  * @Description 53. 最大子序和
  */
-public class maxSubArray {
+public class MaxSubArray {
     public int maxSubArray(int[] nums) {
-//         动态规划
-//         int[] dp = new int[nums.length];
-//         dp[0] = nums[0];
-//         if (nums.length == 1) {
-//             return dp[0];
-//         }
-//         int max = dp[0];
-//         for (int i = 1; i < nums.length; i++) {
-//             dp[i] = Math.max(nums[i], (dp[i - 1] + nums[i]));
-//             max = dp[i] > max ? dp[i] : max;
-//         }
-//         return max;
-
         // 分治
         return getInfo(nums, 0, nums.length - 1).mSum;
     }
@@ -71,5 +58,34 @@ public class maxSubArray {
             this.iSum = iSum;
         }
     }
+
+    public int maxSubArray0(int[] nums) {
+        // 前缀和
+        int len = nums.length;
+        int[] prefix = new int[len + 1];
+        for (int i = 0; i < len; i++) {
+            prefix[i + 1] = prefix[i] + nums[i];
+        }
+
+        int min = Integer.MAX_VALUE, max = nums[0];
+        for (int i = 1; i <= len; i++) {
+            min = Math.min(min, prefix[i]);
+            max = Math.max(max, prefix[i] - min);
+        }
+        return max;
+    }
+
+     public int maxSubArray1(int[] nums) {
+         // 动态规划，时间：O(N)，空间：O(1)
+         int len = nums.length;
+         int[] dp = new int[len];// dp[i] 为以nums[i]结尾的最大子数组和
+         dp[0] = nums[0];
+         int max = dp[0];
+         for (int i = 1; i < len; i++) {
+             dp[i] = Math.max(nums[i], nums[i] + dp[i - 1]);
+             max = Math.max(max, dp[i]);
+         }
+         return max;
+     }
 
 }
