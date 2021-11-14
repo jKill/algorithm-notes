@@ -1,9 +1,6 @@
 package haiwaitu.t20211109;
 
-import java.util.Deque;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @Author huangjunqiao
@@ -13,6 +10,9 @@ import java.util.Set;
 public class FindMinSteps {
     public int findMinStep(String board, String hand) {
         // BFS
+        char[] arr = hand.toCharArray();
+        Arrays.sort(arr);
+        hand = new String(arr);
         int len = board.length();
         Deque<State> q = new LinkedList<>();
         Set<String> visited = new HashSet<>();
@@ -24,7 +24,7 @@ public class FindMinSteps {
             String currBoard = state.board;
             String currHand = state.hand;
             int currStep = state.step;
-            for (int i = 0; i < currBoard.length(); i++) {
+            for (int i = 0; i <= currBoard.length(); i++) {
                 for (int j = 0; j < currHand.length(); j++) {
                     // 剪枝1，手上球同色时选一个（第一个）即可
                     if (j > 0 && currHand.charAt(j - 1) == currHand.charAt(j)) {
@@ -36,10 +36,11 @@ public class FindMinSteps {
                     }
                     // 剪枝3，只在手球与目标位置右侧球同色，或者左右两侧球同色时放置
                     boolean choose = false;
-                    if (currHand.charAt(j) == currBoard.charAt(i)) {
+                    if (i < currBoard.length() && currHand.charAt(j) == currBoard.charAt(i)) {
                         choose = true;
                     }
-                    if (i > 0 && currBoard.charAt(i - 1) == currBoard.charAt(i)) {
+                    // 能将连续的球拆分到不同的组合消除
+                    if (i > 0 && i < currBoard.length() && currBoard.charAt(i - 1) == currBoard.charAt(i) && currBoard.charAt(i - 1) != currHand.charAt(j)) {
                         choose = true;
                     }
                     if (choose) {
@@ -48,8 +49,9 @@ public class FindMinSteps {
                             return currStep + 1;
                         }
                         String newHand = currHand.substring(0, j) + currHand.substring(j + 1);
-                        q.offer(new State(newBoard, newHand, currStep + 1));
-                        visited.add(newBoard + "#" + newHand);
+                        if (visited.add(newBoard + "#" + newHand)) {
+                            q.offer(new State(newBoard, newHand, currStep + 1));
+                        }
                     }
                 }
             }
