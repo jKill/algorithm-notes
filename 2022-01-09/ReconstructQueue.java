@@ -10,7 +10,7 @@ import java.util.Comparator;
  */
 public class ReconstructQueue {
     public int[][] reconstructQueue(int[][] people) {
-        // 时间：O(nlogn)，空间：O()，用时：25min
+        // 时间：O(n^2)，空间：O(n)
         Arrays.sort(people, new Comparator<int[]>() {
             @Override
             public int compare(int[] p1, int[] p2) {
