@@ -9,6 +9,9 @@ import java.util.LinkedList;
  * @Description 856. 括号的分数
  */
 public class ScoreOfParentheses {
+    /**
+     * 类似题型有 394. 字符串解码，都是在处理嵌套的括号同时需要关注嵌套的深度
+     */
     public int scoreOfParentheses(String s) {
         // 栈维护深度和每层深度的得分，时间O(N)，空间O(N)
         Deque<Integer> stack = new LinkedList<>();
@@ -43,6 +46,26 @@ public class ScoreOfParentheses {
             }
         }
         return ans;
+    }
+
+    public int scoreOfParentheses1(String s) {
+        // 分治，时间：O(n^2)，空间：O(n)
+        return f(s, 0, s.length() - 1);
+    }
+    public int f(String s, int l, int r) {
+        int res = 0, score = 0;
+        for (int i = l; i <= r; i++) {
+            score += s.charAt(i) == '(' ? 1 : -1;
+            if (score == 0) {
+                if (i - l == 1) {
+                    res++;
+                } else {
+                    res += 2 * f(s, l + 1, i - 1);
+                }
+                l = i + 1;
+            }
+        }
+        return res;
     }
 
 }
