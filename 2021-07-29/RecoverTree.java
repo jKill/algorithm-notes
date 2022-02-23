@@ -76,4 +76,39 @@ public class RecoverTree {
         }
         swapVal(small, big);
     }
+
+    TreeNode n1, n2, pre;
+    public void recoverTree1(TreeNode root) {
+        // Morris遍历，时间：O(n)，空间：O(1)
+        while (root != null) {
+            if (root.left != null) {
+                TreeNode rightMost = root.left;
+                while (rightMost.right != null && rightMost.right != root) {
+                    rightMost = rightMost.right;
+                }
+                if (rightMost.right != root) {
+                    rightMost.right = root;
+                    root = root.left;
+                } else {
+                    handle(root);
+                    rightMost.right = null;
+                    pre = root;
+                    root = root.right;
+                }
+            } else {
+                handle(root);
+                pre = root;
+                root = root.right;
+            }
+        }
+        swapVal(n1, n2);
+    }
+    public void handle(TreeNode root) {
+        if (pre != null && pre.val > root.val) {
+            if (n1 == null) {
+                n1 = pre;
+            }
+            n2 = root;
+        }
+    }
 }
