@@ -11,31 +11,14 @@ import java.util.List;
  * @Description 234. 回文链表
  */
 public class IsPalindrome {
-    ListNode lNode;
     public boolean isPalindrome(ListNode head) {
-        // 递归解法，时间O(N)，空间O(N)
-        lNode = head;
-        return isCore(head);
-    }
-    boolean isCore(ListNode rNode) {
-        if (rNode == null) {
-            return true;
-        }
-        boolean isPalidrome = isCore(rNode.next) && lNode.val == rNode.val;
-        lNode = lNode.next;
-        return isPalidrome;
-    }
-
-    public boolean isPalindrome0(ListNode head) {
-        // 线性表，时间O(N)，空间O(N)
+        // 数组+双指针，时间：O(n)，空间：O(n)
         List<ListNode> list = new ArrayList<>();
-        ListNode node = head;
-        while (node != null) {
-            list.add(node);
-            node = node.next;
+        while (head != null) {
+            list.add(head);
+            head = head.next;
         }
-        int len = list.size();
-        int l = 0, r = len - 1;
+        int l = 0, r = list.size() - 1;
         while (l < r) {
             if (list.get(l).val != list.get(r).val) {
                 return false;
@@ -45,4 +28,37 @@ public class IsPalindrome {
         }
         return true;
     }
+     public boolean isPalindrome0(ListNode head) {
+         // 反转+快慢指针，时间：O(n)，空间：O(1)
+         ListNode mid = findMid(head);
+         ListNode head2 = mid;
+         head2 = reverse(head2);// 反转并从中点断开
+         while (head != null && head2 != null) {
+             if (head.val != head2.val) {
+                 return false;
+             }
+             head = head.next;
+             head2 = head2.next;
+         }
+         return true;
+     }
+     public ListNode reverse(ListNode head) {
+         ListNode pre = null, node = head;
+         while (node != null) {
+             ListNode next = node.next;
+             node.next = pre;
+
+             pre = node;
+             node = next;
+         }
+         return pre;
+     }
+     public ListNode findMid(ListNode head) {
+         ListNode slow = head, fast = head;
+         while (fast != null && fast.next != null) {
+             slow = slow.next;
+             fast = fast.next.next;
+         }
+         return slow;
+     }
 }
