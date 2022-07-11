@@ -52,4 +52,20 @@ public class FindDuplicate {
         }
         return res;
     }
+    public int findDuplicate1(int[] nums) {
+        // 建图+Floyd判圈，时间：O(n)，空间：O(1)
+        // 对i -> nums[i] 建图，如没重复数，所有节点入度均为1，图呈现为一个链表，如有一个重复数，则有一个节点入度变成2，形成环。
+        int slow = nums[0], fast = nums[nums[0]];
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        }
+        slow = 0;
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return slow;
+    }
+
 }
